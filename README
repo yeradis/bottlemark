@@ -2,15 +2,15 @@ Bottlemark
 ===========
 
 
-A simple Python CMS? built with [Bottle]:http://bottlepy.org/docs/dev/ web framework and [Markdown2]:https://github.com/trentm/python-markdown2
+A simple Python CMS? built with  Bottle web framework and Markdown2
 
 So simple that no database is required.
 
-Just write your content using the [Markdown](http://en.wikipedia.org/wiki/Markdown) syntax and place your file in **contents** folder, the file name must use this format: 
+Just write your content using the Markdown syntax and place your file in contents folder, the file name must use this format: 
 
-***yourfilenamehere.md*** 
+yourfilenamehere.md
 
-where the **.md** extension is needed.
+where .md extension is needed.
 
 Also, the first lines of the file must be:
 
@@ -25,41 +25,42 @@ How ?
 BottleMark is also using Bottle Templates, for example check the default layout.tpl for contents:
 
 
-        <!DOCTYPE html>
-        <html>
-          %include head title=title
-          <body>
-              
-              <div class="container-narrow">
+    <!DOCTYPE html>
+    <html>
+      %include head title=title
+      <body>
+          
+          <div class="container-narrow">
+    
+            %include header.tpl
+            
+            <h1>{{!title}}</h1>
+            <h4>{{!author}}</h4>
+            <h6>{{!date}}</h6>
+            <hr/>
+            
+            {{!content}}
+          
+            %include footer.tpl
+          </div>
         
-                %include header.tpl
-                
-                <h1>{{!title}}</h1>
-                <h4>{{!author}}</h4>
-                <h6>{{!date}}</h6>
-                <hr/>
-                
-                {{!content}}
-              
-                %include footer.tpl
-              </div>
-                
-            <script src="/static/bootstrap/js/bootstrap.min.js"></script>
-          </body>
-        </html>
+        
+        <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+      </body>
+    </html>
 
 
 So, those firsts lines of your .md in the template correspond to
 
-** {{!title}} **
+{{!title}}
 
-** {{!author}} **
+{{!author}}
 
-** {{!date}} **
+{{!date}}
 
 The remaining, the content goes here.
 
-** {{!content}} **
+{{!content}}
             
 
 So, lets try it.
@@ -70,11 +71,11 @@ First, run the app:
     
 This will run as a standalone and lightweight WSGI app.
 
-Then point your browser to ** http://localhost:8080/ ** 
+Then point your browser to http://localhost:8080/
 
 That’s it. 
 
-There will appear the index page showing some samples already available in ***contents***
+There will appear the index page showing some samples already available in contents
 
 
 ---------
