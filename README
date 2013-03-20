@@ -1,6 +1,7 @@
-#Bottlemark#
+# Bottlemark #
 
-A simple **Python** CMS? built with **[Bottle](http://bottlepy.org/docs/dev/)** web framework and **[Markdown2](https://github.com/trentm/python-markdown2)**
+
+A simple **Python** CMS? built with ** [Bottle]: http://bottlepy.org/docs/dev/ ** web framework and **[Markdown2](https://github.com/trentm/python-markdown2)**
 
 So simple that no database is required.
 
@@ -22,6 +23,7 @@ How ?
 
 BottleMark is also using Bottle Templates, for example check the default layout.tpl for contents:
 
+```html
     <!DOCTYPE html>
     <html>
       %include head title=title
@@ -45,18 +47,19 @@ BottleMark is also using Bottle Templates, for example check the default layout.
         <script src="/static/bootstrap/js/bootstrap.min.js"></script>
       </body>
     </html>
+```
 
 So, those firsts lines of your .md in the template correspond to
 
-**{{!title}}**
+** {{!title}} **
 
-**{{!author}}**
+** {{!author}} **
 
-**{{!date}}**
+** {{!date}} **
 
 The remaining, the content goes here.
 
-**{{!content}}**
+** {{!content}} **
             
 
 So, lets try it.
@@ -67,7 +70,7 @@ First, run the app:
     
 This will run as a standalone and lightweight WSGI app.
 
-Then point your browser to **http://localhost:8080/** 
+Then point your browser to ** http://localhost:8080/ ** 
 
 That’s it. 
 
